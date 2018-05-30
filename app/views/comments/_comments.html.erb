@@ -2,5 +2,6 @@
 <% @post.comments.each do |comment| %>
   <div class="card card-body bg-light">
     <p><strong><%= comment.username %>: </strong> <%= comment.body %></p>
+    <%= link_to "[X]", [comment.post, comment], method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 <% end %>
